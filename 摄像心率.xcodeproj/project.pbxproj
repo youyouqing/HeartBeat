@@ -15,6 +15,9 @@
 		983655311E83BED000723316 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9836552F1E83BED000723316 /* LaunchScreen.storyboard */; };
 		9836553C1E83BED000723316 /* ____Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9836553B1E83BED000723316 /* ____Tests.m */; };
 		983655471E83BED000723316 /* ____UITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 983655461E83BED000723316 /* ____UITests.m */; };
+		983655561E83BF3800723316 /* HeartView.m in Sources */ = {isa = PBXBuildFile; fileRef = 983655551E83BF3800723316 /* HeartView.m */; };
+		987850451E851EE70027D085 /* HeartBeat.m in Sources */ = {isa = PBXBuildFile; fileRef = 987850441E851EE70027D085 /* HeartBeat.m */; };
+		9878C7D71E88EF3200E3A6DC /* HeartLive.m in Sources */ = {isa = PBXBuildFile; fileRef = 9878C7D61E88EF3200E3A6DC /* HeartLive.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +54,12 @@
 		983655421E83BED000723316 /* 摄像心率UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "摄像心率UITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		983655461E83BED000723316 /* ____UITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "____UITests.m"; sourceTree = "<group>"; };
 		983655481E83BED000723316 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		983655541E83BF3800723316 /* HeartView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeartView.h; sourceTree = "<group>"; };
+		983655551E83BF3800723316 /* HeartView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HeartView.m; sourceTree = "<group>"; };
+		987850431E851EE70027D085 /* HeartBeat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeartBeat.h; sourceTree = "<group>"; };
+		987850441E851EE70027D085 /* HeartBeat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HeartBeat.m; sourceTree = "<group>"; };
+		9878C7D51E88EF3200E3A6DC /* HeartLive.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HeartLive.h; sourceTree = "<group>"; };
+		9878C7D61E88EF3200E3A6DC /* HeartLive.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HeartLive.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,11 +114,17 @@
 				983655251E83BED000723316 /* AppDelegate.m */,
 				983655271E83BED000723316 /* ViewController.h */,
 				983655281E83BED000723316 /* ViewController.m */,
+				9878C7D51E88EF3200E3A6DC /* HeartLive.h */,
+				9878C7D61E88EF3200E3A6DC /* HeartLive.m */,
 				9836552A1E83BED000723316 /* Main.storyboard */,
 				9836552D1E83BED000723316 /* Assets.xcassets */,
 				9836552F1E83BED000723316 /* LaunchScreen.storyboard */,
 				983655321E83BED000723316 /* Info.plist */,
 				983655211E83BED000723316 /* Supporting Files */,
+				983655541E83BF3800723316 /* HeartView.h */,
+				983655551E83BF3800723316 /* HeartView.m */,
+				987850431E851EE70027D085 /* HeartBeat.h */,
+				987850441E851EE70027D085 /* HeartBeat.m */,
 			);
 			path = "摄像心率";
 			sourceTree = "<group>";
@@ -273,7 +288,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9878C7D71E88EF3200E3A6DC /* HeartLive.m in Sources */,
 				983655291E83BED000723316 /* ViewController.m in Sources */,
+				983655561E83BF3800723316 /* HeartView.m in Sources */,
+				987850451E851EE70027D085 /* HeartBeat.m in Sources */,
 				983655261E83BED000723316 /* AppDelegate.m in Sources */,
 				983655231E83BED000723316 /* main.m in Sources */,
 			);
@@ -505,6 +523,7 @@
 				9836554D1E83BED000723316 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9836554E1E83BED000723316 /* Build configuration list for PBXNativeTarget "摄像心率Tests" */ = {
 			isa = XCConfigurationList;
@@ -513,6 +532,7 @@
 				983655501E83BED000723316 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		983655511E83BED000723316 /* Build configuration list for PBXNativeTarget "摄像心率UITests" */ = {
 			isa = XCConfigurationList;
@@ -521,6 +541,7 @@
 				983655531E83BED000723316 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
