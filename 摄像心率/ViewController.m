@@ -39,12 +39,31 @@
         
         //开启测心率方法
         [HeartBeat shareManager].delegate = self;
-        [HeartBeat shareManager].type = 1;
+        [HeartBeat shareManager].type = heartBeatTypeHeartRate;
         [[HeartBeat shareManager] start];
 
     //}
     
     
+}
+#pragma mark - 测心率回调
+
+- (void)startHeartDelegateRatePoint:(NSDictionary *)point {
+    NSNumber *n = [[point allValues] firstObject];
+    //拿到的数据传给心电图View
+    [self.live drawRateWithPoint:n];
+    //NSLog(@"%@",point);
+}
+
+- (void)startHeartDelegateRateError:(NSError *)error {
+    NSLog(@"%@",error);
+}
+
+- (void)startHeartDelegateRateFrequency:(NSInteger)frequency {
+    NSLog(@"\n瞬时心率：%ld",frequency);
+    dispatch_async(dispatch_get_main_queue(), ^{
+        self.label.text = [NSString stringWithFormat:@"%ld次/分",(long)frequency];
+    });
 }
 
 

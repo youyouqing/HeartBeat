@@ -61,7 +61,7 @@ static CGFloat grid_w = 30.0f;
 
 - (instancetype)initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame: frame]) {
-        self.backgroundColor = [UIColor blackColor];
+        self.backgroundColor = [UIColor orangeColor];
         self.points = [[NSMutableArray alloc]init];
         self.clearsContextBeforeDrawing = YES;
     }
