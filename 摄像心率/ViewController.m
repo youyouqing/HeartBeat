@@ -15,14 +15,16 @@
 @property (strong, nonatomic) HeartLive *live;
 @property (strong, nonatomic) UILabel *label;
 
-
+@property (strong,nonatomic) NSTimer *timer;
 @end
-
+static int counts = 0;
 @implementation ViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-   
+    _timer = [NSTimer scheduledTimerWithTimeInterval:30 target:self selector:@selector(reapTime) userInfo:nil repeats:YES];
+    
+    
     
    // for (int i = 0; i<3; i++) {
         //创建了一个心电图的View
@@ -39,16 +41,30 @@
         
         //开启测心率方法
         [HeartBeat shareManager].delegate = self;
-        [HeartBeat shareManager].type = heartBeatTypeHeartRate;
+        [HeartBeat shareManager].type = heartBeatTypeOxygen;
         [[HeartBeat shareManager] start];
+    
+    
+        [[HeartBeat shareManager] stop];
 
     //}
     
     
 }
+
+-(void)reapTime
+{
+
+    counts++;
+    
+
+
+}
+
+
 #pragma mark - 测心率回调
 
-- (void)startHeartDelegateRatePoint:(NSDictionary *)point {
+- (void)startHeartDelegateRatePoint:(NSDictionary *)point heartType:(heartBeatType)type;{
     NSNumber *n = [[point allValues] firstObject];
     //拿到的数据传给心电图View
     [self.live drawRateWithPoint:n];
@@ -62,7 +78,7 @@
 - (void)startHeartDelegateRateFrequency:(NSInteger)frequency {
     NSLog(@"\n瞬时心率：%ld",frequency);
     dispatch_async(dispatch_get_main_queue(), ^{
-        self.label.text = [NSString stringWithFormat:@"%ld次/分",(long)frequency];
+        self.label.text = [NSString stringWithFormat:@"%ld",(long)frequency];
     });
 }
 

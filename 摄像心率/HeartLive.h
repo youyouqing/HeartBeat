@@ -19,10 +19,11 @@
  */
 
 #import <UIKit/UIKit.h>
-
+@class HeartBeat;
 @interface HeartLive : UIView
 
 @property(assign,nonatomic) NSInteger h;
+
 
 - (void)drawRateWithPoint:(NSNumber *)point;
 

@@ -28,7 +28,7 @@ static float lastH = 0;
 static int count = 0;
 @protocol HeartBeatPluginDelegate <NSObject>
 
-- (void)startHeartDelegateRatePoint:(NSDictionary *)point;
+- (void)startHeartDelegateRatePoint:(NSDictionary *)point heartType:(heartBeatType)type;
 @optional
 - (void)startHeartDelegateRateError:(NSError *)error;
 - (void)startHeartDelegateRateFrequency:(NSInteger)frequency;

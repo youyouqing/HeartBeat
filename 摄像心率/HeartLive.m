@@ -10,6 +10,8 @@
 
 @interface HeartLive ()
 @property (strong, nonatomic) NSMutableArray *points;
+
+//@property (assign,nonatomic) heartBeatType type;
 @end
 
 static CGFloat grid_w = 30.0f;
@@ -18,6 +20,7 @@ static CGFloat grid_w = 30.0f;
 
 
 - (void)drawRateWithPoint:(NSNumber *)point {
+//    self.type = type;
     // 倒叙插入数组
     [self.points insertObject:point atIndex:0];
     
@@ -37,7 +40,9 @@ static CGFloat grid_w = 30.0f;
     CGFloat ww = self.frame.size.width;
     CGFloat hh = self.frame.size.height;
     CGFloat pos_x = ww;
-    CGFloat pos_y = hh/2;
+//    CGFloat pos_y = hh/2;
+    
+     CGFloat pos_y = 0;
     // 获取当前画布
     CGContextRef context = UIGraphicsGetCurrentContext();
     // 折线宽度
@@ -49,7 +54,9 @@ static CGFloat grid_w = 30.0f;
     CGContextMoveToPoint(context, pos_x, pos_y);
     for (int i = 0; i < self.points.count; i++) {
         float h = [self.points[i] floatValue];
-        pos_y = hh/2 + (h * hh/2) ;
+//        pos_y = hh/2 + (h * hh/2) ;
+        
+         pos_y = 0 + ((h-0.8) * hh/2) ;
         CGContextAddLineToPoint(context, pos_x, pos_y);
         pos_x -=6;
     }

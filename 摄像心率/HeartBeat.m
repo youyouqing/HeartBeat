@@ -202,8 +202,12 @@ static float T = 10;
         if (self.backPoint)
             self.backPoint(point);
         // 代理回调方法
-        if ([self.delegate respondsToSelector:@selector(startHeartDelegateRatePoint:)])
-            [self.delegate startHeartDelegateRatePoint:point];
+        if ([self.delegate respondsToSelector:@selector(startHeartDelegateRatePoint: heartType:)])
+            
+        {
+            [self.delegate startHeartDelegateRatePoint:point heartType:_type];
+        }
+        
         // 分析波峰波谷
         [self analysisPointsWith:point];
     }
@@ -360,7 +364,7 @@ static float T = 10;
                 
                 t_c = [[[point_c allValues] firstObject] doubleValue];//   平方和开方----
                 t_l = [[[point_l allValues] firstObject] doubleValue];
-                fre = (NSInteger)(110-(25*t_c));//由脉搏周
+                fre = (NSInteger)100*t_c;//(110-(25*t_c));//由脉搏周
 
                 
             }
@@ -408,7 +412,7 @@ static float T = 10;
                 
                 t_c = [[[point_c allValues] firstObject] doubleValue];
                  t_r = [[[point_r allValues] firstObject] doubleValue];
-                fre =  (NSInteger)(110-(25*t_c)); //  脉率的计算   100
+                fre =  (NSInteger)100*t_c;//(110-(25*t_c)); //  脉率的计算   100
                 
             }
             else if (_type == heartBeatTypeBloodPressure){
